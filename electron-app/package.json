@@ -1,0 +1,18 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "something built with electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "Iceman Tong <31529857@qq.com>",
+  "repository": "https://github.com/iceriver2/semi-finished",
+  "license": "WTFPL",
+  "dependencies": {
+    "electron": "^1.8.4"
+  }
+}
