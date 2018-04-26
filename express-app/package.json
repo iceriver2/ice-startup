@@ -9,6 +9,25 @@
   "keywords": [
     "express"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iceriver2/semi-finished"
+  },
   "author": "Iceman Tong <31529857@qq.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "ioredis": "^3.2.2",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
+    "mysql": "^2.15.0",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.1.1",
+    "supertest": "^3.0.0"
+  }
 }
