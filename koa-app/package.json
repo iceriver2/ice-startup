@@ -1,0 +1,33 @@
+{
+  "name": "koa-app",
+  "version": "1.0.0",
+  "description": "base application build by koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iceriver2/semi-finished.git"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "Iceman Tong <31529857@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iceriver2/semi-finished/issues"
+  },
+  "homepage": "https://github.com/iceriver2/semi-finished#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "debug": "^3.1.0",
+    "nyc": "^11.7.1"
+  },
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-route": "^3.2.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1"
+  }
+}
