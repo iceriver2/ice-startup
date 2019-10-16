@@ -1,0 +1,24 @@
+const httpConfig = {
+    port: 80
+};
+
+const mysqlConfig = {
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'root'
+};
+
+const redisConfig = {
+    host: 'localhost',
+    port: 6379,
+    db: 1,
+    password: '',
+    ttl: 3600
+};
+
+module.exports = {
+    httpConfig,
+    mysqlConfig,
+    redisConfig
+};

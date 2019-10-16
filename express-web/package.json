@@ -4,6 +4,8 @@
   "description": "base application built by express",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "debug": "DEBUG=server:* node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,6 +28,7 @@
     "request": "^2.85.0"
   },
   "devDependencies": {
+    "eslint": "^6.5.1",
     "istanbul": "^0.4.5",
     "mocha": "^5.1.1",
     "supertest": "^3.0.0"
