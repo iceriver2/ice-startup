@@ -1,19 +1,19 @@
 # semi-finished
 
-All sub projects are semi-finished.
-But they are easy to extend.
+All sub projects are semi-finished. But they are easy to extend.
 
-## electron-app
+And productive tools are provided in `${project}/bin/`.
 
-A semi-finished app, built with electron.
-- with sqlite3 support
+## express-web
 
-## express-app
+Build by express, with support for mysql, redis.
 
-A semi-finished app, build with express. 
+## koa-web
 
-## koa-app
-
-A semi-finished app, build with koa.
+Build by koa, with support for mysql, redis, websocket.
 
 Frontend & Backend.
+
+## ssm-web
+
+Build by spring-springmvc-mybatis, with support for mysql, redis. 
