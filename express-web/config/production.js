@@ -18,8 +18,16 @@ const redisConfig = {
     ttl: 3600
 };
 
+const logConfig = {
+    enable: true,
+    interval: '1d',
+    path: 'log',
+    file: 'access.log'
+};
+
 module.exports = {
     httpConfig,
     mysqlConfig,
-    redisConfig
+    redisConfig,
+    logConfig
 };
