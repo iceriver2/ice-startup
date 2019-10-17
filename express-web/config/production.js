@@ -1,5 +1,6 @@
 const httpConfig = {
-    port: 80
+    port: 80,
+    hostname: 'localhost'
 };
 
 const mysqlConfig = {
