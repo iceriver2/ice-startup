@@ -112,7 +112,9 @@ function listModules() {
     console.log('modules: ', dirs.map(n => removePrefixSlash(n.replace(MOD, ''))));
 }
 function createModule(arg = []) {
-    const template = `${__dirname}/module-index-template.js`;
+    const indexTmpl = `${__dirname}/template/module.tmpl`;
+    const routeTmpl = `${__dirname}/template/route.tmpl`;
+    const modelTmpl = `${__dirname}/template/model.tmpl`;
 
     arg.forEach((d) => {
         if (exists(`${MOD}/${d}`)) {
@@ -123,7 +125,9 @@ function createModule(arg = []) {
         createDir(`${MOD}/${d}`);
         createDir(`${MOD}/${d}/model`);
         createDir(`${MOD}/${d}/route`);
-        if (exists(template)) copy(template, `${MOD}/${d}/index.js`);
+        if (exists(indexTmpl)) copy(indexTmpl, `${MOD}/${d}/index.js`);
+        if (exists(routeTmpl)) copy(routeTmpl, `${MOD}/${d}/route/index.js`);
+        if (exists(modelTmpl)) copy(modelTmpl, `${MOD}/${d}/model/index.js`);
     });
 }
 function deleteModule(arg = []) {
