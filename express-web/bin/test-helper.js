@@ -141,8 +141,12 @@ function createTest(arg = []) {
         if (!exists(`${MOD}/${d}`)) {
             if (exists(indexTmpl)) {
                 let content = read(indexTmpl);
-                content = content.replace('{route}', `${d}/index tests`);
+                let loop = content.substring(content.indexOf('{begin}'), content.indexOf('{end}') + '{end}'.length);
+                content = content.replace(loop, '{loop}');
+
                 content = content.replace('{module}', '');
+                content = content.replace('{loop}', '');
+
                 write(`${TEST}/${d}/index.js`, content);
             }
             return;
@@ -154,8 +158,24 @@ function createTest(arg = []) {
             const n = removePrefixSlash(r.replace(`${MOD}/${d}/route`, '').replace('.js', ''));
             if (exists(indexTmpl)) {
                 let content = read(indexTmpl);
-                content = content.replace('{route}', `module ${d}/${n} tests`);
+                let loop = content.substring(content.indexOf('{begin}'), content.indexOf('{end}') + '{end}'.length);
+                content = content.replace(loop, '{loop}');
+                loop = loop.replace('{begin}', '').replace('{end}', '');
+
                 content = content.replace('{module}', `const mod = require('${path.relative(`${TEST}/${d}`, `${MOD}/${d}/route/${n}`)}');`);
+                const mod = require(`${path.relative(__dirname, `${MOD}/${d}/route/${n}`)}`);
+                let dynamic = '';
+                mod.stack.forEach(layer => {
+                    const p = `/${d}/${n}${layer.route.path}`;
+                    const m = Object.keys(layer.route.methods).join(', ');
+
+                    dynamic += loop
+                        .replace('{method}', m).replace('{method}', m).replace('{method}', m)
+                        .replace('{route}', p).replace('{route}', p).replace('{route}', p);
+                });
+
+                content = content.replace('{loop}', dynamic);
+
                 write(`${TEST}/${d}/${n}.js`, content);
             }
         });
