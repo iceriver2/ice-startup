@@ -12,12 +12,16 @@ mod.get('/', (req, res) => {
 
 // curl http://localhost:3000/demo/demo/hello
 mod.get('/hello', (req, res) => {
-    res.render(`${path.resolve(__dirname, '../')}/static/hello.html`, { user: 'iceman' });
+    res.render(`${path.resolve(__dirname, '../')}/static/hello.html`, { user: 'iceman' }, (err, html) => {
+        res.type('html');
+        res.send(html);
+    });
 });
 
 // curl -d a=1 http://localhost:3000/demo/demo/foo?b=2
 mod.post('/foo', (req, res) => {
-    res.send(JSON.stringify(req.query) + JSON.stringify(req.body));
+    const obj = Object.assign({}, req.query, req.body);
+    res.send(JSON.stringify(obj));
     res.end();
 });
 
