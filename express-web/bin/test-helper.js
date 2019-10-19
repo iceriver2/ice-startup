@@ -140,7 +140,10 @@ function createTest(arg = []) {
 
         if (!exists(`${MOD}/${d}`)) {
             if (exists(indexTmpl)) {
-                write(`${TEST}/${d}/index.js`, read(indexTmpl).replace('{route}', `${d}/index tests`));
+                let content = read(indexTmpl);
+                content = content.replace('{route}', `${d}/index tests`);
+                content = content.replace('{module}', '');
+                write(`${TEST}/${d}/index.js`, content);
             }
             return;
         }
@@ -148,9 +151,12 @@ function createTest(arg = []) {
         if (!exists(`${MOD}/${d}/route`)) return;
         const routes = readFilesInDir(`${MOD}/${d}/route`);
         routes.forEach(r => {
-            const n = removePrefixSlash(r.replace(`${MOD}/${d}/route`, ''));
+            const n = removePrefixSlash(r.replace(`${MOD}/${d}/route`, '').replace('.js', ''));
             if (exists(indexTmpl)) {
-                write(`${TEST}/${d}/${n}`, read(indexTmpl).replace('{route}', `${d}/${n} tests`));
+                let content = read(indexTmpl);
+                content = content.replace('{route}', `module ${d}/${n} tests`);
+                content = content.replace('{module}', `const mod = require('${path.relative(`${TEST}/${d}`, `${MOD}/${d}/route/${n}`)}');`);
+                write(`${TEST}/${d}/${n}.js`, content);
             }
         });
     });
