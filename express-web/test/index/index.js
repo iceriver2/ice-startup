@@ -3,8 +3,8 @@ const assert = require('assert');
 
 test.before(() => {});
 
-test.describe('visit /', () => {
-    test.it('should ok', (done) => {
+test.describe('index/index.js', () => {
+    test.it('visit / should be ok', (done) => {
         request(app)
             .get('/')
             .expect(200)

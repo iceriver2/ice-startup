@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "debug": "DEBUG=server:* node index.js",
-    "test": "mocha test/*/*.js"
+    "test": "mocha test/*/*.js",
+    "test-helper": "node bin/test-helper.js",
+    "module-helper": "node bin/module-helper.js"
   },
   "keywords": [
     "express"

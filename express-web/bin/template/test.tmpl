@@ -1,0 +1,16 @@
+const { request, test, app } = require('../index');
+const assert = require('assert');
+
+// do something before test
+test.before(() => {});
+
+// describe a test
+test.describe('{route}', () => {
+    // do a test and check the result
+    test.it('it should be a path of the route', (done) => {
+        done();
+    });
+});
+
+// do something after test
+test.after(() => {});
