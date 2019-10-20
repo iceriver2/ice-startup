@@ -10,14 +10,24 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <spring.version>5.2.0.RELEASE</spring.version>
+
+        <sprint.redis.version>2.2.0.RELEASE</sprint.redis.version>
+        <jedis.version>3.1.0</jedis.version>
+
         <mybatis.version>3.5.2</mybatis.version>
         <mybatis-spring.version>2.0.2</mybatis-spring.version>
+
+        <jdbc.version>5.1.48</jdbc.version>
+
+        <druid.version>1.1.20</druid.version>
+
         <slf4j.version>1.7.28</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+
         <junit.version>4.12</junit.version>
         <javax.version>8.0.1</javax.version>
-        <jdbc.version>5.1.48</jdbc.version>
         <fastjson.version>1.2.62</fastjson.version>
     </properties>
 
@@ -78,6 +88,13 @@
             <version>${jdbc.version}</version>
         </dependency>
 
+        <!-- druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
         <!-- mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -88,6 +105,18 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis-spring.version}</version>
+        </dependency>
+
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>${sprint.redis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
         </dependency>
 
         <!-- spring -->
