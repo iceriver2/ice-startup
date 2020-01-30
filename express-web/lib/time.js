@@ -1,10 +1,13 @@
 const moment = require('moment');
 
-const nowToString = () => moment().format('YYYY-MM-DD HH:mm:ss.SSS');
+const now = (fmt = 'YYYY-MM-DD HH:mm:ss.SSS') => moment().format(fmt);
 
-const nowToTimestamp = () => moment().unix();
+const today = (fmt = 'YYYY-MM-DD') => moment().format(fmt);
+
+const timestamp = () => moment().unix();
 
 module.exports = {
-    nowToString,
-    nowToTimestamp
+    now,
+    today,
+    timestamp
 };

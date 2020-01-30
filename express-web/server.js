@@ -14,7 +14,7 @@ const { ENV, MOD, LIB } = require('./config/const');
 const { httpConfig, mysqlConfig, redisConfig, logConfig } = require(`./config/${ENV}`);
 
 // import functions
-const { nowToString } = require(`${LIB}/time`);
+const { now } = require(`${LIB}/time`);
 const { readDirsInDir, requireOrExit } = require(`${LIB}/file`);
 
 // create app
@@ -48,6 +48,6 @@ readDirsInDir(MOD).forEach((dir) => {
     app.use(mod);
 });
 
-debug(`Server starts at ${nowToString()}`);
+debug(`Server starts at ${now()}`);
 
 module.exports = app;
