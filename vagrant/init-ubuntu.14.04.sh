@@ -87,7 +87,7 @@ echo "...done"
 echo ""
 
 echo "==========================="
-echo "install node..."
+echo "install node(for root only)..."
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 source $HOME/.bashrc
 export NVM_DIR="$HOME/.nvm"
