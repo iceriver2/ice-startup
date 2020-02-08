@@ -47,42 +47,42 @@ echo "" > $log
 echo "==========================="
 echo "install mysql5.5.62..."
 apt install -y mysql-server mysql-client # user:root password:root
-echo "mysql 5.5.62 installed" >> $log
+echo "mysql v5.5.62 installed" >> $log
 echo "...done"
 echo ""
 
 echo "==========================="
 echo "install redis2.8.4..."
 apt install -y redis-server redis-tools
-echo "redis 2.8.4 installed" >> $log
+echo "redis v2.8.4 installed" >> $log
 echo "...done"
 echo ""
 
 echo "==========================="
 echo "install apache2.4.7..."
 apt install -y apache2 libapache2-mod-fastcgi libapache2-mod-php5
-echo "apache 2.4.7 installed" >> $log
+echo "apache v2.4.7 installed" >> $log
 echo "...done"
 echo ""
 
 echo "==========================="
 echo "install php5.5.9..."
 apt install -y php5 php5-adodb php5-cgi php5-cli php5-common php5-curl php5-exactimage php5-fpm php5-gd php5-geoip php5-json php5-mongo php5-mysql php5-pgsql php5-redis
-echo "php 5.5.9 installed" >> $log
+echo "php v5.5.9 installed" >> $log
 echo "...done"
 echo ""
 
 echo "==========================="
 echo "install mongodb2.4.9..."
 apt install -y mongodb mongodb-clients mongodb-server
-echo "mongodb 2.4.9 installed" >> $log
+echo "mongodb v2.4.9 installed" >> $log
 echo "...done"
 echo ""
 
 echo "==========================="
 echo "install postgresql9.3..."
 apt install -y postgresql postgresql-contrib
-echo "postgresql 9.3 installed" >> $log
+echo "postgresql v9.3 installed" >> $log
 echo "...done"
 echo ""
 
@@ -101,7 +101,7 @@ echo ""
 echo "==========================="
 echo "install jdk7..."
 apt install -y openjdk-7-jdk
-echo "jdk7 installed" >> $log
+echo "jdk v1.7.0 installed" >> $log
 echo "...done"
 echo ""
 
@@ -109,6 +109,23 @@ echo "==========================="
 echo "install tomcat7..."
 apt install -y tomcat7
 echo "tomcat 7 installed" >> $log
+echo "...done"
+echo ""
+
+echo "" >> $log
+echo "" >> $log
+
+echo "==========================="
+echo "create phpinfo..."
+phpfile="phpinfo.php"
+phpdir="/var/www/html"
+echo "<?php phpinfo();" > "$phpdir/$phpfile"
+echo "apache root is $phpdir" >> $log
+echo "visit http://localhost/$phpfile for apache" >> $log
+echo ""
+javadir="/var/lib/tomcat7/webapps"
+echo "tomcat root is $javadir" >> $log
+echo "visit http://localhost:8080/ for tomcat" >> $log
 echo "...done"
 echo ""
 
@@ -133,8 +150,12 @@ echo "mongo" > $connmongo
 chmod +x $connmongo
 echo "sudo -u postgres psql" >> $connpsql
 chmod +x $connpsql
+echo "" >> $log
+echo "/root/connect-xxx.sh created" >> $log
 echo "...done"
 echo ""
+
+echo "==========================="
 
 echo ""
 echo ""
