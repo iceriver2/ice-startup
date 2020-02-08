@@ -1,0 +1,18 @@
+const { request, test, app } = require('../index');
+const assert = require('assert');
+{module}
+
+test.before(() => {});
+
+{begin}
+test.describe('{method} {route}', () => {
+    test.it('{method} {route} correct', (done) => {
+        done();
+    });
+    test.it('{method} {route} wrong', (done) => {
+        done();
+    });
+});
+{end}
+
+test.after(() => {});

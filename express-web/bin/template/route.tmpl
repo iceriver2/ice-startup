@@ -1,0 +1,12 @@
+const express = require('express');
+const mod = express.Router({});
+
+const { getFakeData } = require('../model/index');
+
+// visit `http://localhost:3000/xxx/index`, xxx is the name of the module
+mod.get('/', (req, res) => {
+    res.send(JSON.stringify(getFakeData()));
+    res.end();
+});
+
+module.exports = mod;

@@ -1,0 +1,44 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "base application built by express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "debug": "DEBUG=server:* node index.js",
+    "test": "mocha test/*/*.js",
+    "test-helper": "node bin/test-helper.js",
+    "module-helper": "node bin/module-helper.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iceriver2/semi-finished"
+  },
+  "author": "Iceman Tong <31529857@qq.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "debug": "^3.1.0",
+    "ejs": "^2.7.1",
+    "express": "^4.16.3",
+    "ioredis": "^3.2.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.22.1",
+    "morgan": "^1.9.1",
+    "mysql": "^2.15.0",
+    "request": "^2.85.0",
+    "rotating-file-stream": "^1.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.1.1",
+    "supertest": "^3.0.0"
+  }
+}
